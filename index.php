@@ -24,15 +24,16 @@
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 		<!-- declare all page rendering cascading style sheets in order of incidence -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/styles.css" />							<!-- PRODUCTION STYLES COMPILED USING LESS -->
+		<link rel="stylesheet/less" type="text/css" href="less/project.less">	<!-- DEVELOPMENT STYLES COMPILED IN THE CLIENT -->
 	
 		<!-- not relevent to subject, declare all javascripts AFTER css linking -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js"></script>
     </head>
  
    <body>
-   
+		
 		<div id="main_wrapper">
 		
 			<header>
@@ -59,7 +60,7 @@
 		</div>
 	
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 		
