@@ -82,7 +82,7 @@ textarea {
 
 
 /* ==========================================================================
-   Less CSS VARIABLE DECLARATIONS AND MIXENS
+   Less CSS VARIABLE DECLARATIONS AND MIXINS
    ========================================================================== */
 
 
@@ -92,7 +92,6 @@ textarea {
 
 @import "normalize.less";
 @import "preboot.less";
-@import "pygments.less";
 @import "myCustomMixens.less";
 
 
@@ -118,7 +117,8 @@ html, body{
 
 
 #main_wrapper{
-	.rounded-corners(10px);
+	.border-radius(10px);
+	.box-shadow();
 	background: @background-color;
 	width: 500px;
 	margin: auto;
@@ -129,6 +129,7 @@ html, body{
 
 /* NESTING SELECTORS TO REFLECT DOM HIERARCHY */
 #nested_wrapper {
+
 	h1 {font-size: 2.5em; color: @base-color;}
 	p{ margin-top: 10px;}
 }
