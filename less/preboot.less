@@ -102,7 +102,6 @@
 // Mixins: vendor prefixes
 // --------------------------------------------------
 
-
 // Font-family
 .font-face( @family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false ) when not (@include-svg) {
 	@font-face {
@@ -115,7 +114,6 @@
 	    font-style: @font-style;
 	}
 }
-
 .font-face( @family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false ) when (@include-svg) {
 	@font-face {
 	    font-family: @family-name;
@@ -127,6 +125,28 @@
 	    font-weight: @font-weight;
 	    font-style: @font-style;
 	}
+}
+
+/*	nesting mixins inside a ruleset with a #namespace.  */
+#Font-family{
+  .Serif (@weight: normal, @size: 14px, @lineHeight: 20px) {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: @weight;
+    font-size: @size;       
+    line-height: @lineHeight;
+  }
+  .SansSerif (@weight: normal, @size: 14px, @lineHeight: 20px) { 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: @weight;
+    font-size: @size;       
+    line-height: @lineHeight;
+  }
+  .Monospace (@weight: normal, @size: 14px, @lineHeight: 20px) {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-weight: @weight;
+    font-size: @size;       
+    line-height: @lineHeight;
+  }
 }
 
 
@@ -150,9 +170,9 @@
 }
 
 .border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
-    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
-    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
-    border-radius: @topleft @topright @bottomright @bottomleft;
+    -webkit-border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    border-radius: @arguments;
 	
 	/* Prevent background color leak outs */
 	-moz-background-clip:    padding;
@@ -207,11 +227,11 @@
 }
 
 .transition-custom (@prop: all, @time: 1s, @ease: linear) {
-    -webkit-transition: @prop @time @ease;
-    -moz-transition: @prop @time @ease;
-    -o-transition: @prop @time @ease;
-    -ms-transition: @prop @time @ease;
-    transition: @prop @time @ease;
+    -webkit-transition: @arguments;
+    -moz-transition: @arguments;
+    -o-transition: @arguments;
+    -ms-transition: @arguments;
+    transition: @arguments;
 }
 
 // Transformations
