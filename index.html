@@ -36,9 +36,15 @@
 		
 		<div id="main_wrapper">
 		
-			<header>
-				<?php include('includes/header.php'); ?>
-			</header>
+			<img src="images/" width="" height="" alt="Logo" title="Logo"/>
+	
+			<nav>
+				<ul>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+				</ul>
+			</nav>
 			
 			<main id="content" class="group" role="main">
 			
@@ -53,9 +59,24 @@
 			
 			</main>
 	
+			<!-- FOOTER -->
 			<footer>
-				<?php include('includes/footer.php'); ?>
+				<p id="copyright">&copy;<span id="year">&nbsp;</span> - All rights reserved.</p>
 			</footer>
+					
+			<script type="text/javascript">
+				
+				// <![CDATA[
+
+					//CREATE INSTANCE OF THE DATE OBJECT	
+					var date = new Date();	
+								
+					//EXTRACT FOUR DIGIT YEAR AND ADD TO SPAN
+					document.getElementById('year').innerHTML = date.getFullYear();
+						
+				// ]]>
+				
+			</script>
 	
 		</div>
 	
